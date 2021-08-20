@@ -1,3 +1,115 @@
 * {
+    padding: 0;
+    margin: 0;
+}
+#nav-links {
+    width: 100%;
 
 }
+.nav-link{
+    display: inline-block;
+    padding: 20px 10px 10px 10px;
+    cursor: pointer;
+}
+.nav-link:hover {
+    text-decoration: underline;
+}
+#about {
+    padding-left: 25px;
+}
+#gmail {
+    margin-left: 67%;
+}
+#sign-in-btn {
+    padding: 9px 28px;
+    color: white;
+    background: #207EE1;
+    border-radius: 6px;
+    
+}
+main {
+    height: 80vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 100px 150px 25px 100px;
+    grid-template-areas: ". . ."
+                        ". logo ." 
+                        ". search ."
+                        ". buttons .";
+}
+#google-img {
+    display: grid;
+    grid-area: logo;
+    align-items: center;
+    justify-items:  center;
+
+}
+#google-logo {
+    max-width: 70%; /*both lines used to re-size google image*/
+    height: auto;
+}
+#google-search {
+    grid-area: search;
+    height: 25px;
+    width: 100%;
+    border-radius: 12px;
+}
+#search-container {
+    display: flex;
+    grid-area: buttons;
+    justify-content: space-evenly;
+   
+    /* border: 1px solid orange; */
+}
+.search-btn {
+    /* display: inline-block; */
+    /* padding: 10px; */
+    height: 30px;
+    padding: 5px;
+    margin-top: 20px;
+    border-radius: 3px;
+    background: #F8F5F5;
+}
+#carbon-container {
+    display: flex;
+    height: 5vh;
+    justify-content: center;
+    background: #F8F5F5;
+}
+#carbon-container h1, img {
+    margin-top: 15px;
+}
+#carbon-neutral{
+    text-decoration: none;
+    color: black;
+    font-size: 15px;
+}
+#carbon-neutral:hover {
+    text-decoration: underline;
+}
+#leaf {
+  max-width: 10px;
+  height: auto; 
+  align-self: flex-start; /*changed this to flex-start, since default value for flexbox items it stretch (MDN align-self)*/
+  margin-right: 5px;
+}
+#footer-links {
+    background: #F8F5F5;
+    height: 8%;
+    width: 100%;
+}
+.footer-link {
+    display: inline-block;
+    padding: 30px 10px 10px 10px;
+    cursor: pointer;
+}
+.footer-link:hover {
+    text-decoration: underline;
+}
+#advertising {
+    margin-left: 15%;
+}
+#privacy {
+    margin-left: 25%;
+}
+

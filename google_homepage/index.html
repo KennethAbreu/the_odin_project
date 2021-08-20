@@ -7,19 +7,48 @@
         <nav id="navbar">
             <div id="nav-links">
                 <ul>
-                    <li id="about"><a></a>About</li>
-                    <li id="store"><a></a>Store</li>
-                    <li id="gmail"><a></a>Gmail</li>
-                    <li id="images"><a></a>Images</li>
-                    <li id="sign-in"><a></a>Sign in</li>
+                    <li class="nav-link" id="about"><a></a>About</li>
+                    <li class="nav-link" id="store"><a></a>Store</li>
+                    <li class="nav-link" id="gmail"><a></a>Gmail</li>
+                    <li class="nav-link" id="images"><a></a>Images</li>
+                    <!-- <li class="nav-link" id="sign-in"><a></a>Sign in</li> -->
+                    <button type="button" id="sign-in-btn">Sign In</button>
                 </ul>
             </div>
         </nav>
         <main>
-            <div id="google-img"></div> 
+            <div id="google-img">
+                <img src="images/googlelogo_color_272x92dp.png" alt="Google" id="google-logo"/>
+            </div> 
             
             <label for="google-search"></label>
             <input type="text" id="google-search" placeholder="" size="10">
+
+            <div id="search-container">
+                <!-- <ul>
+                    <li class="search-btn" id="search">Google Search</li>
+                    <li class="search-btn" id="lucky">I'm Feeling Lucky</li>
+                </ul> -->
+                <button type="button" class="search-btn">Google Search</button>
+                <button type="button" class="search-btn">I'm Feeling Lucky</button>
+            </div>
         </main>
     </body>
+    <footer>
+        <div id="carbon-container">
+            <img id="leaf" src="https://img.icons8.com/fluency/48/000000/leaf.png"/>
+            <h1 ><a id="carbon-neutral" href="https://sustainability.google/commitments/?utm_source=googlehpfooter&utm_
+                medium=housepromos&utm_campaign=bottom-footer&utm_content=" target="_blank">Carbon neutral since 2007</a></h1>
+        </div>
+            <div id="footer-links">
+            <ul>
+                <li class="footer-link" id="advertising"><a>Advertising</a></li>
+                <li class="footer-link" id="business"><a>Business</a></li>
+                <li class="footer-link" id="how-search-works"><a>How Search Works</a></li>
+                <li class="footer-link" id="privacy"><a>Privacy</a></li>
+                <li class="footer-link" id="terms"><a>Terms</a></li>
+                <li class="footer-link" id="settings"><a>Settings</a></li>
+            </ul>
+        </div>
+    </footer>
 </html>
