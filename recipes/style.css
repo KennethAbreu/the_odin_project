@@ -123,7 +123,7 @@ hr {
     border: 2px solid black;
     background: #57394a;
     color: #fff;
-    border-radius: 50px;
+    /* border-radius: 50px; */
 }  
 
 /* Recipes */
@@ -145,7 +145,13 @@ hr {
     margin-top: 30px;
 }
 .recipe-description h2{
+    font-size: 30px;
+    font-weight: 500;
     margin-bottom: 10px;
+}
+#snacks { /* set a specific ID for this because it is the only row title that needs this much margin */
+    margin: 70px 0 10px 0; 
+
 }
 .column-image {
     width: 100%;
@@ -167,8 +173,11 @@ hr {
 .column-2 h4 {
     color: #b2481b;
 }
+.column-2 h4:hover {
+    color: #B08876;
+}
 .rating .fa { /* change color of broken star icons */
-    color: #ff523b;
+    color: #F6814F;
 }
 .save-button {
     margin: 10px 2px;
