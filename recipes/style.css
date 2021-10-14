@@ -6,14 +6,20 @@ body {
     font-family: 'Oswald', sans-serif;
 }
 .navbar {
-    /* background: skyblue; */
+    background: rgba(255, 255, 255, 0.95);
 
     display: flex;
     align-items: center;
-
+    position: fixed;
+    top: 0;
+    width: 100%;
 }
 .logo img {
     margin: 20px 0 20px 10px;
+}
+.title {
+    /* color: #dbb0a0; */
+    font-size: 35px;
 }
 .navbar h1 {
     font-size: 30px;
@@ -46,6 +52,7 @@ a {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    margin-top: 80px;
 }
 .search-container {
     display: flex;
@@ -149,6 +156,10 @@ hr {
     font-weight: 500;
     margin-bottom: 10px;
 }
+.recipe-description p{
+    font-size: 20px;
+    font-weight: 300;
+}
 #snacks { /* set a specific ID for this because it is the only row title that needs this much margin */
     margin: 70px 0 10px 0; 
 
@@ -160,6 +171,7 @@ hr {
 .column-2 {
     flex-basis: 20%;
     min-width: 250px;
+    padding-bottom: 10px;
     margin-bottom: 30px;
     box-shadow: 0 0 20px 0px rgba(0,0,0,0.1); /* card like effect */
 }
@@ -186,4 +198,73 @@ hr {
     background: #57394a;
     color: #fff;
     /* border-radius: 50px; */
+}
+
+/* Footer */
+
+.footer-container {
+    background: #e0c2c0;
+}
+.footer-row {
+
+
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    padding-bottom: 20px;
+    margin-left: 10%;
+    margin-right: 10%;
+}
+.brand {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 80%;
+    margin-left: 10%;
+    margin-right: 10%;
+}
+.brand img {
+    margin: 15px 10px 0 0;
+}
+.brand a{
+    color: #57394a;
+}
+.column-3 {
+
+}
+.column-3 h3{
+    color: #b2481b;
+}
+.vertical-line {
+    border-left: 1px solid black;
+    height: 150px;
+}
+.news-letter {
+    margin-top: 10px;
+    
+}
+.news-letter h3{
+    color: #b2481b;
+    font-size: 25px;
+}
+.news-letter p{
+    font-size: 15px;
+}
+.news-letter h3, p{
+    margin-bottom: 10px;
+}
+.email {
+    padding: 8px 0;
+}
+.sign-up {
+    padding: 8px;
+    border-radius: 0;
+    background: #57394a;
+    color: #fff;
+}
+.copyright {
+    overflow-y: auto; 
+    background: black;
+    color: white;
 }
