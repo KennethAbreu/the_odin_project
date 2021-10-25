@@ -130,6 +130,7 @@ hr {
     border: 2px solid black;
     background: #57394a;
     color: #fff;
+    cursor: pointer;
     /* border-radius: 50px; */
 }  
 
@@ -188,7 +189,7 @@ hr {
 .column-2 h4:hover {
     color: #B08876;
 }
-.rating .fa { /* change color of broken star icons */
+.rating .fa { /* change color of star icons */
     color: #F6814F;
 }
 .save-button {
@@ -197,6 +198,7 @@ hr {
     border: 2px solid black;
     background: #57394a;
     color: #fff;
+    cursor: pointer;
     /* border-radius: 50px; */
 }
 
@@ -230,11 +232,11 @@ hr {
 .brand a{
     color: #57394a;
 }
-.column-3 {
-
-}
 .column-3 h3{
     color: #b2481b;
+}
+.column-3 ul {
+    list-style-type: none; 
 }
 .vertical-line {
     border-left: 1px solid black;
@@ -262,9 +264,27 @@ hr {
     border-radius: 0;
     background: #57394a;
     color: #fff;
+    cursor: pointer;
 }
 .copyright {
+    display: flex;
+    justify-content: space-between;
+    /* align-items: center; */
     overflow-y: auto; 
     background: black;
     color: white;
+    font-size: 10px;
+}
+.copyright p {
+    margin-left: 10px;
+}
+.footer-links ul {
+    display: inline-block;
+}
+.footer-links li {
+    display: inline-block;
+    margin-right: 10px;
+}
+.footer-links a {
+    color: #ffffff;
 }

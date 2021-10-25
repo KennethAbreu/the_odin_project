@@ -1,0 +1,160 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+body {
+    font-family: 'Oswald', sans-serif;
+}
+.navbar {
+    background: rgba(255, 255, 255, 0.95);
+
+    display: flex;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+.logo img {
+    margin: 20px 0 20px 10px;
+}
+.title {
+    /* color: #dbb0a0; */
+    font-size: 35px;
+}
+.navbar h1 {
+    font-size: 30px;
+    margin: 15px 0 20px 10px;
+}
+nav {
+    flex: 1;
+    text-align: right; /* move navlinks to right side */
+}
+.nav-links {
+    display: inline-block;
+    list-style-type: none;
+   
+}
+.nav-links li{ 
+    display: inline-block;
+    margin-right: 20px;
+}
+.nav-links li:hover {
+    text-decoration: underline;
+}
+a {
+    text-decoration: none;
+    color: black;
+}
+.container {
+    margin-right: 10%;
+    margin-left: 10%;
+    height: 100vh;
+}
+.location {
+    margin-top: 100px;
+}
+.location li {
+    display: inline-block;
+}
+ul {
+    list-style-type: none; /* remove bullet points */
+    font-size: 18px;
+    color: black;
+}
+.recipe-title {
+    /* border: 1px solid red; */
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.author {
+
+    display: flex;
+    justify-content: space-evenly;
+    width: 25%;
+    margin-top: 20px;
+    font-size: 18px;
+}
+.date {
+    border-left: 1px solid black;
+    padding: 0 10px;
+}
+.review-container {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 25%;
+    font-size: 13px;
+    padding: 10px;
+}
+.rating-container :hover {
+    color: lightgrey;
+    font-size: 16px;
+}
+.rating :hover {
+    color: #F6814F;
+}
+.socials {
+    margin-top: 10px;
+}
+#big-line {
+    margin: 10px 0 60px 0;
+}
+.recipe-card {
+    display: flex;
+    justify-content: space-between;
+    height: 700px;
+}
+.recipe-description {
+    padding: 10px 20px 0 20px;
+}
+.inspiration, .cook-notes {
+    margin-bottom: 80px;
+}
+.chef-seal {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin-bottom: 10px;
+}
+.chef-seal h3 {
+    margin-left: 10px;
+    color: #b2481b;
+    font-size: 13px;
+}
+.cook-notes {
+    background: linear-gradient(to top, #e0c2c0, #dbb0a0);
+    display: flex;
+    justify-content: space-evenly;
+    padding: 10px;
+    text-align: center;
+}
+.vertical-line {
+    border-left: 1px solid black;
+}
+.ingredients ul {
+    font-size: 14px;
+}
+
+/* Directions */
+.directions-title {
+    margin-top: 40px;
+}
+.directions {
+    margin-top: 40px;
+    display: flex;
+    flex-direction: column;
+
+}
+.step-line {
+    display: flex;
+    padding: 0 30px;
+    margin-bottom: 10px;
+}
+.number {
+    color: #57394a;
+    margin-right: 40px;
+  
+
+}
