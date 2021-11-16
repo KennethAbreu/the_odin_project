@@ -1,3 +1,5 @@
+let computerScore = 0;
+let playerScore = 0;
 //Array consisting of all moves in RPS
 const play = ["Rock", "Paper", "Scissors"];
 //declaring a random number equal to the length of the play array
@@ -13,46 +15,27 @@ let playerSelection = () => {
     return move.toLowerCase();
 }
 
+
 function playRound (playerSelection, computerSelection) {
 
-    if (playerSelection === "rock" && computerSelection === "scissors") {
-        console.log(`Player selected ${playerSelection} & Computer selected ${computerSelection}...`);
-        console.log("VICTORY!");
+    if (playerSelection === computerSelection) {
+        console.log("Tie round!")
     }
-    else if (playerSelection === "rock" && computerSelection === "paper") {
-        console.log(`Player selected ${playerSelection} & Computer selected ${computerSelection}...`);
-        console.log("DEFEATED!");
+    else if (
+        (playerSelection === "rock" && computerSelection === "paper") ||
+        (playerSelection === "paper" && computerSelection === "scissors") ||
+        (playerSelection === "scissors" && computerSelection === "rock")
+    ) {
+        console.log(`${computerSelection} beats ${playerSelection}, computer wins this round!`)
+        computerScore++;
     }
-    else if (playerSelection === "rock" && computerSelection === "rock") {
-        console.log(`Player selected ${playerSelection} & Computer selected ${computerSelection}...`);
-        console.log("Run that back");
-    }
-    else if (playerSelection === "paper" && computerSelection === "rock") {
-        console.log(`Player selected ${playerSelection} & Computer selected ${computerSelection}...`);
-        console.log("VICTORY!");
-    }
-    else if (playerSelection === "paper" && computerSelection === "scissors") {
-        console.log(`Player selected ${playerSelection} & Computer selected ${computerSelection}...`);
-        console.log("DEFEATED!");
-    }
-    else if (playerSelection === "paper" && computerSelection === "paper") {
-        console.log(`Player selected ${playerSelection} & Computer selected ${computerSelection}...`);
-        console.log("Run that back");
-    }
-    else if (playerSelection === "scissors" && computerSelection === "paper") {
-        console.log(`Player selected ${playerSelection} & Computer selected ${computerSelection}...`);
-        console.log("VICTORY!");
-    }
-    else if (playerSelection === "scissors" && computerSelection === "rock") {
-        console.log(`Player selected ${playerSelection} & Computer selected ${computerSelection}...`);
-        console.log("DEFEATED!");
-    }
-    else if (playerSelection === "scissors" && computerSelection === "scissors") {
-        console.log(`Player selected ${playerSelection} & Computer selected ${computerSelection}...`);
-        console.log("Run that back");
-    }
-    else {
-        console.log("Something went wrong...");
+    else if (
+        (playerSelection === "paper" && computerSelection === "rock") ||
+        (playerSelection === "scissors" && computerSelection === "paper") ||
+        (playerSelection === "rock" && computerSelection === "scissors")
+    ) {
+        console.log(`${playerSelection} beats ${computerSelection}, player wins this round!`)
+        playerScore++;
     }
 
 }
@@ -62,9 +45,6 @@ const playerMove = playerSelection();
 const computerSelection = computerPlay();
 
 function game() {
-    let playerScore = 0;
-    let computerScore = 0;
-
     playRound(playerMove, computerSelection);
 }
 console.log(game());
