@@ -1,5 +1,6 @@
 let computerScore = 0;
 let playerScore = 0;
+let round = 0;
 //Array consisting of all moves in RPS
 const play = ["Rock", "Paper", "Scissors"];
 //declaring a random number equal to the length of the play array
@@ -28,6 +29,7 @@ function playRound (playerSelection, computerSelection) {
     ) {
         console.log(`${computerSelection} beats ${playerSelection}, computer wins this round!`)
         computerScore++;
+        round++;
     }
     else if (
         (playerSelection === "paper" && computerSelection === "rock") ||
@@ -36,16 +38,16 @@ function playRound (playerSelection, computerSelection) {
     ) {
         console.log(`${playerSelection} beats ${computerSelection}, player wins this round!`)
         playerScore++;
+        round++;
     }
 
 }
-//calling playerSelection() to prompt for user input
-const playerMove = playerSelection();
-//calling computerSelection() to select a random array element from play
-const computerSelection = computerPlay();
-
 function game() {
-    playRound(playerMove, computerSelection);
+    playRound(playerSelection(), computerPlay());
+    console.log(`Player: ${playerScore} vs Computer: ${computerScore}`);
+    console.log(`Round: ${round}`);
 }
-console.log(game());
+while (round < 5) {
+    console.log(game());
+}
 
