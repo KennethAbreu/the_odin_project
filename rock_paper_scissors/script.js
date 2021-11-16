@@ -52,7 +52,7 @@ function playRound (playerSelection, computerSelection) {
         console.log("Run that back");
     }
     else {
-        console.log("WTF");
+        console.log("Something went wrong...");
     }
 
 }
