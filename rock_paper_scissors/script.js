@@ -47,7 +47,12 @@ function game() {
     console.log(`Player: ${playerScore} vs Computer: ${computerScore}`);
     console.log(`Round: ${round}`);
 }
-while (round < 5) {
+while (round < 6) {
     console.log(game());
 }
-
+if (playerScore >= 5) {
+    console.log("Player Wins!");
+}
+else if (computerScore >= 5) {
+    console.log("Comnputer Wins!");
+}
