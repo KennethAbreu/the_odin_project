@@ -1,22 +1,17 @@
 let computerScore = 0;
 let playerScore = 0;
 let round = 0;
-//Array consisting of all moves in RPS
 const play = ["Rock", "Paper", "Scissors"];
-//declaring a random number equal to the length of the play array
 let random = Math.floor(Math.random() * play.length);
-//function that returns random element in play array
+
 let computerPlay = () => {
     let move = play[random];
     return move.toLowerCase();
 }
-
 let playerSelection = () => {
     let move = prompt("Rock, Paper or Scissors?");
     return move.toLowerCase();
 }
-
-
 function playRound (playerSelection, computerSelection) {
 
     if (playerSelection === computerSelection) {
