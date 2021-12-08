@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <link rel="stylesheet" href="style.css">
+        <script src="script.js" defer></script>
+    </head>
+    <body>
+        <!-- Method 1 -->
+        <!-- button with JS inline, now its cluttered. Good Job -->
+        <!-- Also, only 1 "onclick" per element using this method. Good Job -->
+        <button onclick="alert('Hello World')">Click Me</button>
+
+        <!-- Method 2 -->
+        <button id='btn'>Hello World</button>
+
+        <!-- Method 3 -->
+        <button id='the-btn'>You know thats right</button>
+
+        <!-- Using named functions -->
+
+        <button onclick="alertFunction()">Named function test</button>
+    
+
+        <!-- Attach listeners to a group of nodes -->
+
+        <div class="container">
+            <button id='1'>Click Me</button>
+            <button id='2'>Click Me</button>
+            <button id='3'>Click Me</button>
+        </div>
+    </body>
+</html>
