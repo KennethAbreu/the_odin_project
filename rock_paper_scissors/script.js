@@ -3,9 +3,12 @@ let playerScore = 0;
 let round = 0;
 const play = ["Rock", "Paper", "Scissors"];
 let random = Math.floor(Math.random() * play.length);
+
+const scoreBoard = document.querySelector('.score-board');
 const rock = document.querySelector('.rock');
 const paper = document.querySelector('.paper');
 const scissors = document.querySelector('.scissors');
+
 
 let computerPlay = () => {
     let move = play[random];

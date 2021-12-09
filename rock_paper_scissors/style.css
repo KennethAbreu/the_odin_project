@@ -1,14 +1,15 @@
 * {
     margin: 0;
     padding: 0;
-    background: peachpuff;
 }
-.container {
-    background: white;
-    margin-top: 15%;
-    margin-left: 20%;
-    margin-right: 20%;
-    height: 200px;
+.score-board {
+    background: blue;
+    width: 100%;
+    color: white;
+}
+.buttons {
+    background: black;
+    height: 100vh;
     display: flex;
     justify-content: space-evenly;
     align-items: center;
