@@ -3,15 +3,23 @@ let playerScore = 0;
 let round = 0;
 const play = ["Rock", "Paper", "Scissors"];
 let random = Math.floor(Math.random() * play.length);
+const rock = document.querySelector('.rock');
+const paper = document.querySelector('.paper');
+const scissors = document.querySelector('.scissors');
 
 let computerPlay = () => {
     let move = play[random];
     return move.toLowerCase();
 }
-let playerSelection = () => {
-    let move = prompt("Rock, Paper or Scissors?");
-    return move.toLowerCase();
-}
+rock.addEventListener('click', () => {
+    let move = rock.textContent.toLowerCase();
+    playRound(move, computerPlay());
+})
+
+// let playerSelection = () => {
+//     let move = prompt("Rock, Paper or Scissors?");
+//     return move.toLowerCase();
+// }
 function playRound (playerSelection, computerSelection) {
 
     if (playerSelection === computerSelection) {
@@ -42,12 +50,14 @@ function game() {
     console.log(`Player: ${playerScore} vs Computer: ${computerScore}`);
     console.log(`Round: ${round}`);
 }
-while (round < 6) {
-    console.log(game());
-}
-if (playerScore >= 5) {
-    console.log("Player Wins!");
-}
-else if (computerScore >= 5) {
-    console.log("Comnputer Wins!");
-}
+
+
+// while (round < 6) {
+//     console.log(game());
+// }
+// if (playerScore >= 5) {
+//     console.log("Player Wins!");
+// }
+// else if (computerScore >= 5) {
+//     console.log("Comnputer Wins!");
+// }
