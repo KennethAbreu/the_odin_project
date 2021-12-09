@@ -14,12 +14,16 @@ let computerPlay = () => {
 rock.addEventListener('click', () => {
     let move = rock.textContent.toLowerCase();
     playRound(move, computerPlay());
-})
+});
+paper.addEventListener('click', () => {
+    let move = paper.textContent.toLowerCase();
+    playRound(move, computerPlay());
+});
+scissors.addEventListener('click', () => {
+    let move = scissors.textContent.toLowerCase();
+    playRound(move, computerPlay());
+});
 
-// let playerSelection = () => {
-//     let move = prompt("Rock, Paper or Scissors?");
-//     return move.toLowerCase();
-// }
 function playRound (playerSelection, computerSelection) {
 
     if (playerSelection === computerSelection) {
