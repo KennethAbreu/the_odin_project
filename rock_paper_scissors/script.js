@@ -8,6 +8,8 @@ const scoreBoard = document.querySelector('.score-board');
 const rock = document.querySelector('.rock');
 const paper = document.querySelector('.paper');
 const scissors = document.querySelector('.scissors');
+let moveStatus = document.createElement('p');
+
 
 
 let computerPlay = () => {
@@ -30,14 +32,17 @@ scissors.addEventListener('click', () => {
 function playRound (playerSelection, computerSelection) {
 
     if (playerSelection === computerSelection) {
-        console.log("Tie round!")
+        moveStatus.textContent = "Tie round!";
+        scoreBoard.appendChild(moveStatus);
     }
     else if (
         (playerSelection === "rock" && computerSelection === "paper") ||
         (playerSelection === "paper" && computerSelection === "scissors") ||
         (playerSelection === "scissors" && computerSelection === "rock")
     ) {
-        console.log(`${computerSelection} beats ${playerSelection}, computer wins this round!`)
+        moveStatus.textContent = `${computerSelection} beats ${playerSelection}, computer wins this round!`;
+        scoreBoard.appendChild(moveStatus);
+
         computerScore++;
         round++;
     }
@@ -46,7 +51,9 @@ function playRound (playerSelection, computerSelection) {
         (playerSelection === "scissors" && computerSelection === "paper") ||
         (playerSelection === "rock" && computerSelection === "scissors")
     ) {
-        console.log(`${playerSelection} beats ${computerSelection}, player wins this round!`)
+        moveStatus.textContent = `${playerSelection} beats ${computerSelection}, player wins this round!`;
+        scoreBoard.appendChild(moveStatus);
+
         playerScore++;
         round++;
     }
