@@ -30,10 +30,10 @@ scissors.addEventListener('click', () => {
 });
 
 function playRound (playerSelection, computerSelection) {
-
+    
     if (playerSelection === computerSelection) {
         moveStatus.textContent = "Tie round!";
-        scoreBoard.appendChild(moveStatus);
+        scoreBoard.appendChild()
     }
     else if (
         (playerSelection === "rock" && computerSelection === "paper") ||
@@ -57,7 +57,6 @@ function playRound (playerSelection, computerSelection) {
         playerScore++;
         round++;
     }
-
 }
 function game() {
     playRound(playerSelection(), computerPlay());

@@ -3,13 +3,30 @@
     padding: 0;
 }
 .score-board {
-    background: blue;
+    background: #FFE6BC;
     width: 100%;
-    color: white;
+    height: 100%;
+    color: black;
     text-align: center;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+.players {
+    border: 1px solid blue;
+    display: flex;
+    justify-content: space-evenly;
+    width: 25%;
+}
+.scores {
+    border: 1px solid red;
+    display: flex;
+    justify-content: space-evenly;
+    width: 25%;
+
 }
 .buttons {
-    background: black;
+    background: #8E806A;
     height: 100vh;
     display: flex;
     justify-content: space-evenly;
