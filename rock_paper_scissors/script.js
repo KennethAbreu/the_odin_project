@@ -1,5 +1,7 @@
 let computerScore = 0;
 let playerScore = 0;
+let currentComputerScore = document.querySelector('.computer-score');
+let currentPlayerScore = document.querySelector('.player-score');
 let round = 0;
 const play = ["Rock", "Paper", "Scissors"];
 let random = Math.floor(Math.random() * play.length);
@@ -45,6 +47,8 @@ function playRound (playerSelection, computerSelection) {
 
         computerScore++;
         round++;
+
+        currentComputerScore.innerHTML = computerScore; // Used innerHTML since textContent expects a string
     }
     else if (
         (playerSelection === "paper" && computerSelection === "rock") ||
@@ -56,6 +60,7 @@ function playRound (playerSelection, computerSelection) {
 
         playerScore++;
         round++;
+        currentPlayerScore.innerHTML = playerScore; // Used innerHTML since textContent expects a string
     }
 }
 function game() {
