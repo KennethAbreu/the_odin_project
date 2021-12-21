@@ -69,7 +69,7 @@ function game() {
     console.log(`Round: ${round}`);
 }
 
-//
+
 // while (round < 6) {
 //     console.log(game());
 // }
