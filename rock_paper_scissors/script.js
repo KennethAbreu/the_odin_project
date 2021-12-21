@@ -2,10 +2,11 @@ let computerScore = 0;
 let playerScore = 0;
 let currentComputerScore = document.querySelector('.computer-score');
 let currentPlayerScore = document.querySelector('.player-score');
-let round = 0;
+let round = document.querySelector('.round');
 const play = ["Rock", "Paper", "Scissors"];
 let random = Math.floor(Math.random() * play.length);
 
+const main = document.querySelector('.main');
 const scoreBoard = document.querySelector('.score-board');
 const rock = document.querySelector('.rock');
 const paper = document.querySelector('.paper');
@@ -35,7 +36,7 @@ function playRound (playerSelection, computerSelection) {
     
     if (playerSelection === computerSelection) {
         moveStatus.textContent = "Tie round!";
-        scoreBoard.appendChild()
+        main.insertBefore(moveStatus, scoreBoard);
     }
     else if (
         (playerSelection === "rock" && computerSelection === "paper") ||
@@ -43,7 +44,7 @@ function playRound (playerSelection, computerSelection) {
         (playerSelection === "scissors" && computerSelection === "rock")
     ) {
         moveStatus.textContent = `${computerSelection} beats ${playerSelection}, computer wins this round!`;
-        scoreBoard.appendChild(moveStatus);
+        main.insertBefore(moveStatus, scoreBoard);
 
         computerScore++;
         round++;
@@ -56,7 +57,7 @@ function playRound (playerSelection, computerSelection) {
         (playerSelection === "rock" && computerSelection === "scissors")
     ) {
         moveStatus.textContent = `${playerSelection} beats ${computerSelection}, player wins this round!`;
-        scoreBoard.appendChild(moveStatus);
+        main.insertBefore(moveStatus, scoreBoard);
 
         playerScore++;
         round++;

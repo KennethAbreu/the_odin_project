@@ -2,15 +2,23 @@
     margin: 0;
     padding: 0;
 }
+.main {
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr;
+    text-align: center;
+    background: #E6C48C;
+}
 .score-board {
     background: #FFE6BC;
     width: 100%;
-    height: 100%;
+    height: auto;
     color: black;
     text-align: center;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
+    grid-row-start: 3;
+
 }
 .players {
     border: 1px solid blue;
@@ -36,4 +44,7 @@ button {
     background: white;
     padding: 5px 20px;
     border-radius: 5px;
+}
+.round {
+    grid-row-start: 1 ;
 }
