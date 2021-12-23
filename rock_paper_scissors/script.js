@@ -16,7 +16,7 @@ let moveStatus = document.createElement('p');
 let roundCounter = document.createElement('p');
 
 
-
+//
 let computerPlay = () => {
     let move = play[random];
     return move.toLowerCase();
