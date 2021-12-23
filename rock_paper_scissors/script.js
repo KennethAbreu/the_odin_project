@@ -2,7 +2,7 @@ let computerScore = 0;
 let playerScore = 0;
 let currentComputerScore = document.querySelector('.computer-score');
 let currentPlayerScore = document.querySelector('.player-score');
-let round = document.querySelector('.round');
+let round = 0;
 const play = ["Rock", "Paper", "Scissors"];
 let random = Math.floor(Math.random() * play.length);
 
@@ -11,7 +11,9 @@ const scoreBoard = document.querySelector('.score-board');
 const rock = document.querySelector('.rock');
 const paper = document.querySelector('.paper');
 const scissors = document.querySelector('.scissors');
+let roundNumber = document.querySelector('.round-number');
 let moveStatus = document.createElement('p');
+let roundCounter = document.createElement('p');
 
 
 
@@ -37,6 +39,7 @@ function playRound (playerSelection, computerSelection) {
     if (playerSelection === computerSelection) {
         moveStatus.textContent = "Tie round!";
         main.insertBefore(moveStatus, scoreBoard);
+        return
     }
     else if (
         (playerSelection === "rock" && computerSelection === "paper") ||
@@ -49,6 +52,7 @@ function playRound (playerSelection, computerSelection) {
         computerScore++;
         round++;
 
+        roundNumber.innerHTML = round;
         currentComputerScore.innerHTML = computerScore; // Used innerHTML since textContent expects a string
     }
     else if (
@@ -61,6 +65,8 @@ function playRound (playerSelection, computerSelection) {
 
         playerScore++;
         round++;
+        
+        roundNumber.innerHTML = round;
         currentPlayerScore.innerHTML = playerScore; // Used innerHTML since textContent expects a string
     }
 }

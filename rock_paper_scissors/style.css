@@ -34,8 +34,8 @@
 
 }
 .buttons {
-    background: #8E806A;
-    height: 100vh;
+    /* background: #8E806A; */
+    height: 100px;
     display: flex;
     justify-content: space-evenly;
     align-items: center;
