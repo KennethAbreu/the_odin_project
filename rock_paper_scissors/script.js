@@ -1,7 +1,7 @@
 let computerScore = 0;
 let playerScore = 0;
-let currentComputerScore = document.querySelector('.computer-score');
-let currentPlayerScore = document.querySelector('.player-score');
+let computerScoreDisplay = document.querySelector('.computer-score');
+let playerScoreDisplay = document.querySelector('.player-score');
 let round = 0;
 const play = ["Rock", "Paper", "Scissors"];
 let random = Math.floor(Math.random() * play.length);
@@ -21,18 +21,18 @@ let computerPlay = () => {
     let move = play[random];
     return move.toLowerCase();
 }
-rock.addEventListener('click', () => {
-    let move = rock.textContent.toLowerCase();
+
+function clickPlayRound() {
+    let move = this.textContent.toLowerCase();
     playRound(move, computerPlay());
-});
-paper.addEventListener('click', () => {
-    let move = paper.textContent.toLowerCase();
-    playRound(move, computerPlay());
-});
-scissors.addEventListener('click', () => {
-    let move = scissors.textContent.toLowerCase();
-    playRound(move, computerPlay());
-});
+}
+
+rock.addEventListener('click', clickPlayRound);
+paper.addEventListener('click', clickPlayRound);
+scissors.addEventListener('click', clickPlayRound);
+
+
+
 
 function playRound (playerSelection, computerSelection) {
     
@@ -49,11 +49,12 @@ function playRound (playerSelection, computerSelection) {
         moveStatus.textContent = `${computerSelection} beats ${playerSelection}, computer wins this round!`;
         main.insertBefore(moveStatus, scoreBoard);
 
+       
         computerScore++;
         round++;
 
         roundNumber.innerHTML = round;
-        currentComputerScore.innerHTML = computerScore; // Used innerHTML since textContent expects a string
+        computerScoreDisplay.innerHTML = computerScore; // Used innerHTML since textContent expects a string
     }
     else if (
         (playerSelection === "paper" && computerSelection === "rock") ||
@@ -67,7 +68,7 @@ function playRound (playerSelection, computerSelection) {
         round++;
         
         roundNumber.innerHTML = round;
-        currentPlayerScore.innerHTML = playerScore; // Used innerHTML since textContent expects a string
+        playerScoreDisplay.innerHTML = playerScore; // Used innerHTML since textContent expects a string
     }
 }
 function game() {
