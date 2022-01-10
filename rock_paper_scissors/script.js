@@ -1,10 +1,9 @@
 let computerScore = 0;
 let playerScore = 0;
-let computerScoreDisplay = document.querySelector('.computer-score');
-let playerScoreDisplay = document.querySelector('.player-score');
 let round = 0;
+const computerScoreDisplay = document.querySelector('.computer-score');
+const playerScoreDisplay = document.querySelector('.player-score');
 const play = ["Rock", "Paper", "Scissors"];
-let random = Math.floor(Math.random() * play.length);
 
 const main = document.querySelector('.main');
 const scoreBoard = document.querySelector('.score-board');
@@ -18,64 +17,100 @@ let roundCounter = document.createElement('p');
 
 //
 let computerPlay = () => {
-    let move = play[random];
+    const randomNumber = Math.floor(Math.random() * play.length);
+    let move = play[randomNumber];
     return move.toLowerCase();
 }
 
-function clickPlayRound() {
-    let move = this.textContent.toLowerCase();
-    playRound(move, computerPlay());
+rock.addEventListener('click', () => game('rock'));
+paper.addEventListener('click', () => game('paper'));
+scissors.addEventListener('click', () => game('scissors'));
+
+
+function win(playerSelection, computerSelection) {
+    playerScore++;
+    round++;
+    playerScoreDisplay.innerHTML = playerScore;
+    computerScoreDisplay.innerHTML = computerScore;
+    console.log(`Player: ${playerSelection}`);
+    console.log(`Computer: ${computerSelection}`);
+};
+function lose(playerSelection, computerSelection) {
+    computerScore++;
+    round++;
+    playerScoreDisplay.innerHTML = playerScore;
+    computerScoreDisplay.innerHTML = computerScore;
+    console.log(`Player: ${playerSelection}`);
+    console.log(`Computer: ${computerSelection}`);
+};
+function draw() { 
+    console.log('its a draw')
+};
+
+function game(playerSelection) {
+    const computerSelection = computerPlay();
+    switch(playerSelection + computerSelection) {
+        case 'rockscissors':
+        case 'paperrock':
+        case 'scissorspaper':
+            win(playerSelection, computerSelection);
+            break;
+        case 'rockpaper':
+        case 'paperscissors':
+        case 'scissorsrock':
+            lose(playerSelection, computerSelection);
+            break;
+        case 'rockrock':
+        case 'paperpaper':
+        case 'scissorsscissors':
+            draw();
+            break;
+    }
 }
 
-rock.addEventListener('click', clickPlayRound);
-paper.addEventListener('click', clickPlayRound);
-scissors.addEventListener('click', clickPlayRound);
 
-
-
-
-function playRound (playerSelection, computerSelection) {
+// function playRound (playerSelection, computerSelection) {
     
-    if (playerSelection === computerSelection) {
-        moveStatus.textContent = "Tie round!";
-        main.insertBefore(moveStatus, scoreBoard);
-        return
-    }
-    else if (
-        (playerSelection === "rock" && computerSelection === "paper") ||
-        (playerSelection === "paper" && computerSelection === "scissors") ||
-        (playerSelection === "scissors" && computerSelection === "rock")
-    ) {
-        moveStatus.textContent = `${computerSelection} beats ${playerSelection}, computer wins this round!`;
-        main.insertBefore(moveStatus, scoreBoard);
+//     if (playerSelection === computerSelection) {
+//         moveStatus.textContent = "Tie round!";
+//         main.insertBefore(moveStatus, scoreBoard);
+//         return
+//     }
+//     else if (
+//         (playerSelection === "rock" && computerSelection === "paper") ||
+//         (playerSelection === "paper" && computerSelection === "scissors") ||
+//         (playerSelection === "scissors" && computerSelection === "rock")
+//     ) {
+//         moveStatus.textContent = `${computerSelection} beats ${playerSelection}, computer wins this round!`;
+//         main.insertBefore(moveStatus, scoreBoard);
 
        
-        computerScore++;
-        round++;
+//         computerScore++;
+//         round++;
 
-        roundNumber.innerHTML = round;
-        computerScoreDisplay.innerHTML = computerScore; // Used innerHTML since textContent expects a string
-    }
-    else if (
-        (playerSelection === "paper" && computerSelection === "rock") ||
-        (playerSelection === "scissors" && computerSelection === "paper") ||
-        (playerSelection === "rock" && computerSelection === "scissors")
-    ) {
-        moveStatus.textContent = `${playerSelection} beats ${computerSelection}, player wins this round!`;
-        main.insertBefore(moveStatus, scoreBoard);
+//         roundNumber.innerHTML = round;
+//         computerScoreDisplay.innerHTML = computerScore; // Used innerHTML since textContent expects a string
+//     }
+//     else if (
+//         (playerSelection === "paper" && computerSelection === "rock") ||
+//         (playerSelection === "scissors" && computerSelection === "paper") ||
+//         (playerSelection === "rock" && computerSelection === "scissors")
+//     ) {
+//         moveStatus.textContent = `${playerSelection} beats ${computerSelection}, player wins this round!`;
+//         main.insertBefore(moveStatus, scoreBoard);
 
-        playerScore++;
-        round++;
+//         playerScore++;
+//         round++;
         
-        roundNumber.innerHTML = round;
-        playerScoreDisplay.innerHTML = playerScore; // Used innerHTML since textContent expects a string
-    }
-}
-function game() {
-    playRound(playerSelection(), computerPlay());
-    console.log(`Player: ${playerScore} vs Computer: ${computerScore}`);
-    console.log(`Round: ${round}`);
-}
+//         roundNumber.innerHTML = round;
+//         playerScoreDisplay.innerHTML = playerScore; // Used innerHTML since textContent expects a string
+//     }
+// }
+// function game() {
+//     playRound(playerSelection(), computerPlay());
+//     console.log(`Player: ${playerScore} vs Computer: ${computerScore}`);
+//     console.log(`Round: ${round}`);
+// }
 
 
 // while (round < 6) {
