@@ -3,6 +3,7 @@ let playerScore = 0;
 let round = 0;
 const computerScoreDisplay = document.querySelector('.computer-score');
 const playerScoreDisplay = document.querySelector('.player-score');
+const roundDisplay = document.querySelector('.round-number');
 const play = ["Rock", "Paper", "Scissors"];
 
 const main = document.querySelector('.main');
@@ -10,12 +11,9 @@ const scoreBoard = document.querySelector('.score-board');
 const rock = document.querySelector('.rock');
 const paper = document.querySelector('.paper');
 const scissors = document.querySelector('.scissors');
-let roundNumber = document.querySelector('.round-number');
-let moveStatus = document.createElement('p');
-let roundCounter = document.createElement('p');
+let moveStatus = document.querySelector('.result p');
 
 
-//
 let computerPlay = () => {
     const randomNumber = Math.floor(Math.random() * play.length);
     let move = play[randomNumber];
@@ -26,25 +24,40 @@ rock.addEventListener('click', () => game('rock'));
 paper.addEventListener('click', () => game('paper'));
 scissors.addEventListener('click', () => game('scissors'));
 
-
+function announceWinner() {
+    if (playerScore === 5) {
+        moveStatus.textContent = 'Player Wins!' 
+    }
+    else {
+        moveStatus.textContent = 'Computer Wins!'
+    }
+}
+function resetGame() {
+    round = 0;
+    playerScore = 0;
+    computerScore = 0;
+    roundDisplay.innerHTML = 0;
+    playerScoreDisplay.innerHTML = 0;
+    computerScoreDisplay.innerHTML = 0;
+}
 function win(playerSelection, computerSelection) {
     playerScore++;
     round++;
+    roundDisplay.innerHTML = round;
     playerScoreDisplay.innerHTML = playerScore;
     computerScoreDisplay.innerHTML = computerScore;
-    console.log(`Player: ${playerSelection}`);
-    console.log(`Computer: ${computerSelection}`);
+    moveStatus.textContent = `Player's ${playerSelection} beats ${computerSelection}`
 };
 function lose(playerSelection, computerSelection) {
     computerScore++;
     round++;
+    roundDisplay.innerHTML = round;
     playerScoreDisplay.innerHTML = playerScore;
     computerScoreDisplay.innerHTML = computerScore;
-    console.log(`Player: ${playerSelection}`);
-    console.log(`Computer: ${computerSelection}`);
+    moveStatus.textContent = `Computer's ${computerSelection} beats ${playerSelection}`
 };
 function draw() { 
-    console.log('its a draw')
+    moveStatus.textContent = 'Its a DRAW'
 };
 
 function game(playerSelection) {
@@ -65,6 +78,10 @@ function game(playerSelection) {
         case 'scissorsscissors':
             draw();
             break;
+    }
+    if (playerScore === 5 || computerScore === 5) {
+        announceWinner();
+        setTimeout(resetGame, 2000);
     }
 }
 

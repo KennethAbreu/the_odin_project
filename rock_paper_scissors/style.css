@@ -2,6 +2,9 @@
     margin: 0;
     padding: 0;
 }
+body {
+    background: #292c34;
+}
 .main {
     display: grid;
     grid-template-rows: 1fr 1fr 1fr;
@@ -32,6 +35,11 @@
     justify-content: space-evenly;
     width: 25%;
 
+}
+.result p {
+    color: white;
+    text-align: center;
+    font-size: 45px;
 }
 .buttons {
     /* background: #8E806A; */
