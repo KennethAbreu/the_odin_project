@@ -8,10 +8,16 @@ header {
     font-size: 25px;
     
 }
-.button-menu {
+.sketch-container {
+    border: 2px solid orange;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+/* .button-menu {
     text-align: center;
     padding: 15px 0;
-}
+} */
 button {
     font-size: 15px;
     padding: 5px 20px;
@@ -21,7 +27,7 @@ button {
     display: grid;
     grid-template-columns: repeat(16, 1fr);
     grid-template-rows: repeat(16, 1fr);
-    height: 80vh;
+    height: 70vh;
     width: 60%;
     margin-left: 20%;
     margin-right: 20%;
