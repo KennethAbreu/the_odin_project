@@ -1,14 +1,12 @@
 const gridContainer = document.querySelector('.grid-container');
-const reset = document.querySelector('.reset');
+const rainbow_Button = document.querySelector('.rainbow');
+const reset_Button = document.querySelector('.reset');
 const colorDivs = document.querySelectorAll('.drawColor')
 
 function addHover(createdDiv) {
     createdDiv.addEventListener('mouseenter', () => {
         createdDiv.className = 'drawColor';
     });
-}
-function removeHover(createdDiv) {
-    setTimeout(() => {createdDiv.className = '';}, 5000);
 }
 function resetGrid() {
     gridContainer.innerHTML = '';
@@ -27,4 +25,4 @@ function createGrid(boxNumber) {
 }
 
 createGrid(16)
-reset.addEventListener('click', resetGrid);
+reset_Button.addEventListener('click', resetGrid);
